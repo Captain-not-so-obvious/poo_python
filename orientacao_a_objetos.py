@@ -5,6 +5,9 @@ class Veiculo:
     self.velocidade_max = velocidade_max
     self.quilometro_litro = quilometro_litro
 
+  def capacidade_assentos(self, capacidade):
+    print(f'A capacidade máxima de assentos do veículo {self.nome} é {capacidade}')
+
   def toStr(self):
     print(f'nome = {self.nome}')
     print(f'velocidade_max = {self.velocidade_max}')
@@ -12,3 +15,11 @@ class Veiculo:
 
 modelo_carro = Veiculo("fusca", 180, 10)
 modelo_carro.toStr()
+
+class Onibus(Veiculo):
+  def capacidade_assentos(self, capacidade=70):
+    return super().capacidade_assentos(capacidade=70)
+
+onibus_escolar = Onibus("Scania", 120, 8)
+onibus_escolar.toStr()
+onibus_escolar.capacidade_assentos()
